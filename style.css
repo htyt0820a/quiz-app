@@ -1,0 +1,239 @@
+/* ===== リセット & ベース ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d3748;
+}
+
+/* ===== レイアウト ===== */
+.container {
+  width: 100%;
+  max-width: 560px;
+  padding: 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2b6cb0;
+  letter-spacing: 0.05em;
+}
+
+/* ===== カード ===== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== 画面切り替え ===== */
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ===== スタート画面 ===== */
+.intro-text {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #4a5568;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+/* ===== プログレスバー ===== */
+.progress-bar-wrap {
+  background: #e2e8f0;
+  border-radius: 99px;
+  height: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #3182ce;
+  border-radius: 99px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* ===== 問題カウンター ===== */
+.question-counter {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 12px;
+}
+
+/* ===== 問題文 ===== */
+.question-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  color: #1a202c;
+}
+
+/* ===== 選択肢 ===== */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.choice-btn {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #90cdf4;
+  border-radius: 10px;
+  background: #ebf8ff;
+  font-size: 0.97rem;
+  color: #1a365d;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  font-family: inherit;
+}
+
+.choice-btn:hover:not(:disabled) {
+  border-color: #2b6cb0;
+  background: #bee3f8;
+  transform: translateY(-1px);
+}
+
+.choice-btn:disabled {
+  cursor: default;
+}
+
+.choice-btn.correct {
+  border-color: #38a169;
+  background: #f0fff4;
+  color: #22543d;
+  font-weight: 600;
+}
+
+.choice-btn.incorrect {
+  border-color: #e53e3e;
+  background: #fff5f5;
+  color: #742a2a;
+}
+
+/* ===== フィードバック ===== */
+.feedback {
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.feedback.correct {
+  background: #f0fff4;
+  border-left: 4px solid #38a169;
+}
+
+.feedback.incorrect {
+  background: #fff5f5;
+  border-left: 4px solid #e53e3e;
+}
+
+#feedback-text {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.feedback.correct #feedback-text {
+  color: #276749;
+}
+
+.feedback.incorrect #feedback-text {
+  color: #c53030;
+}
+
+.explanation {
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* ===== ボタン共通 ===== */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: #3182ce;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2b6cb0;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ===== 結果画面 ===== */
+.result-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2b6cb0;
+  margin-bottom: 20px;
+}
+
+.score-text {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 12px;
+}
+
+.score-text span {
+  color: #3182ce;
+}
+
+.result-message {
+  text-align: center;
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+/* ===== ユーティリティ ===== */
+.hidden {
+  display: none !important;
+}
